@@ -17,6 +17,7 @@ def simplificador(arrayIn, num):
 
 def arrayToInt(array):
     for x in array:
+        print(x)
         x = int(x)
 
 def analisarString(string):
@@ -26,7 +27,9 @@ def analisarString(string):
     numeros = numeros.replace("-", "")
     numeros = numeros.replace("*", "")
     numeros = numeros.split(" ")
+    numeros = list(filter(None, numeros))
     numeros = arrayToInt(numeros)
+    print(numeros)
     if(caracteres[3] == "+"):
         arraySoma = soma(numeros)
         if(podeSimplificar(arraySoma, 2)):
